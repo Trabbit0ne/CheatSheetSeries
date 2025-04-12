@@ -6,6 +6,17 @@ This article is a guide to Cross Site Scripting (XSS) testing for application se
 
 ## Tests
 
+## Cross-Title Injection (XTI)
+
+### High-Risk Technique
+This technique exploits how browsers handle title tags and can bypass certain XSS filters that don't properly account for title tag injection. The attack works by injecting malicious JavaScript into a title attribute, which gets executed when the page loads:
+
+```html
+</title><script>alert(1);</script>
+```
+
+(Submitted by Émile Durand)
+
 This cheat sheet demonstrates that input filtering is an incomplete defense for XSS by supplying testers with a series of XSS attacks that can bypass certain XSS defensive filters.
 
 ### Basic XSS Test Without Filter Evasion
